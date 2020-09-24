@@ -1,23 +1,41 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Upload example for  Arweave</title>
-    <meta name="description" content="Upload example for  Arweave">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="img/favicon.png">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>Upload example for Arweave</title>
+        <meta name="description" content="Upload example for  Arweave">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="icon" type="image/png" href="img/favicon.png">
+    </head>
 
-<body>
-<header>
-    <h3>Upload example for <a href="https://www.arweave.org">Arweave</a></h3>
-</header>
+    <body>
+        <header>
+            <h3>Upload example for <a href="https://www.arweave.org">Arweave</a></h3>
+        </header>
 
-<main>
+        <main>
+            <div>
+                <article>
+                    <input id="amount" type="button" value="Create a new wallet" onclick="createNewWallet()">
 
-</main>
+                    <div id="dropzone">
+                        <div class="dz-message needsclick">
+                            <br>
+                            Drop wallet here to upload.<br>
+                            <br>
+                        </div>
+                    </div>
 
-<script src="https://unpkg.com/arweave/bundles/web.bundle.js"></script>
-<script src="js/main.js"></script>
-</body>
+                    <h5>Wallet address:</h5>
+                    <p data-binding="key"></p>
+                </article>
+            </div>
+        </main>
+
+        <script src="https://unpkg.com/arweave/bundles/web.bundle.js"></script>
+<!--        <script src="js/dropzone.js"></script>-->
+        <script src="js/filereader.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>
