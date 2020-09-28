@@ -17,9 +17,9 @@
         <main>
             <div>
                 <article>
-                    <input id="amount" type="button" value="Create a new wallet" onclick="createNewWallet()">
+                    <input type="button" value="Create a new wallet" onclick="createNewWallet()">
 
-                    <div id="dropzone">
+                    <div id="wallet-dropzone" class="dropzone">
                         <div class="dz-message needsclick">
                             <br>
                             Drop wallet here to upload.<br>
@@ -27,14 +27,55 @@
                         </div>
                     </div>
 
-                    <h5>Wallet address:</h5>
-                    <p data-binding="key"></p>
+                    <p><strong>Wallet address: </strong><span data-binding="key"></span></p>
+                    <p><strong>Balance AR:</strong> <span data-binding="balance"></span></p>
                 </article>
+
+                <article>
+                    <h3>Data transaction (content)</h3>
+                    <input name="content-data" type="text">
+                    <input type="button" value="Create data transaction" onclick="createDataTransaction('content')">
+                    <input type="button" value="Sign transaction" onclick="signTransaction()">
+                    <input type="button" value="Submit transaction" onclick="submitTransaction()">
+                </article>
+
+                <article>
+                    <h3>Data transaction (image)</h3>
+                    <div id="image-dropzone" class="dropzone">
+                        <div class="dz-message needsclick">
+                            <br>
+                            Drop image here to upload.<br>
+                            <br>
+                        </div>
+                    </div>
+                    <input type="button" value="Create data transaction" onclick="createDataTransaction('image')">
+                    <input type="button" value="Sign transaction" onclick="signTransaction()">
+                    <input type="button" value="Submit transaction" onclick="submitTransaction()">
+                </article>
+
+                <article>
+                    <p><strong>Transaction ID: </strong><span data-binding="transaction-id"></span></p>
+                    <p><strong>Transaction fee: </strong><span data-binding="transaction-fee"></span></p>
+                    <p><strong>Transaction data-root: </strong><span data-binding="transaction-data-root"></span></p>
+                </article>
+
+                <article>
+                    <h3>Get data</h3>
+                    <input name="transaction-id" type="text">
+                    <input type="button" value="Get data" onclick="getTransactionData()">
+                    <p><strong>Data: </strong><span data-binding="transaction-data"></span></p>
+                </article>
+
+                <article>
+                    <h3>Search data</h3>
+                    <input type="button" value="Search data" onclick="searchData()">
+                    <p><strong>Search result: </strong><ul data-binding="search-result"></ul></p>
+                </article>
+
             </div>
         </main>
 
         <script src="https://unpkg.com/arweave/bundles/web.bundle.js"></script>
-<!--        <script src="js/dropzone.js"></script>-->
         <script src="js/filereader.js"></script>
         <script src="js/main.js"></script>
     </body>
